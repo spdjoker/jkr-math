@@ -73,8 +73,5 @@ void test_subtraction() {
 int main() {
 	test_addition();
 	test_subtraction();
-	bvec3 v1;
-
-	std::cout << (v1 == v2);
 	return 0;
 }
