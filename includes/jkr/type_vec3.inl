@@ -1,4 +1,5 @@
-#pragma once
+#ifndef JKR_TYPE_VEC3_INL
+#define JKR_TYPE_VEC3_INL
 
 namespace jkr {
 
@@ -26,7 +27,7 @@ namespace jkr {
 	{}
 
 	template <typename T>
-	vec<3, T>::vec(T a, T b, T c)
+	constexpr vec<3, T>::vec(T a, T b, T c)
 		: x(a)
 		, y(b)
 		, z(c) 
@@ -196,9 +197,10 @@ namespace jkr {
 		return vec<3, bool>(v1.x && v2.x, v1.y && v2.y, v1.z && v2.z);
 	}
 
-	template <typename T>
-	constexpr bool operator || (vec<3, T> const& v1, vec<3, T> const& v2) {
+	constexpr vec<3, bool> operator || (vec<3, bool> const& v1, vec<3, bool> const& v2) {
 		return vec<3, bool>(v1.x || v2.x, v1.y || v2.y, v1.z || v2.z);
 	}
 
 }
+
+#endif

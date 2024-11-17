@@ -1,4 +1,7 @@
-#pragma once
+#ifndef JKR_SETUP_HPP
+#define JKR_SETUP_HPP
+
+// TODO: organize this file
 
 #include <cstddef>
 
@@ -11,3 +14,4 @@ namespace jkr {
 
 }
 
+#endif

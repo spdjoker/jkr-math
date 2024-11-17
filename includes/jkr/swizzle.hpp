@@ -1,4 +1,5 @@
-#pragma once
+#ifndef JKR_SWIZZLE_HPP
+#define JKR_SWIZZLE_HPP
 
 #define JKR_SWIZZLE_COMBINATION_VEC2(a,b) \
 	vec<2, T> a##b() const { return vec<2, T>(a,b); }
@@ -71,3 +72,5 @@
 	JKR_SWIZZLE_VEC3_HELPER_ABC(a,c,d) \
 	JKR_SWIZZLE_VEC3_HELPER_ABC(b,c,d) \
 	JKR_SWIZZLE_COMBINATION_VEC3(d,d,d) 
+
+#endif

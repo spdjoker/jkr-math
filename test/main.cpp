@@ -70,7 +70,7 @@ void test_subtraction() {
 	print("<1,2,3> - <1,2,3>", res);
 }
 
-int main() {
+int main(int argc, char* argv[]) {
 	test_addition();
 	test_subtraction();
 	return 0;

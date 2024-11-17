@@ -1,6 +1,9 @@
-#pragma once
+#ifndef JKR_COMMON_HPP
+#define JKR_COMMON_HPP
 
 #include "jkr/type_vec3.hpp"
+
+// TODO: move to dedicated files later for specific inclusion later
 
 namespace jkr {
 
@@ -10,3 +13,5 @@ namespace jkr {
 	using dvec3 = vec<3, double>;
 
 }
+
+#endif
