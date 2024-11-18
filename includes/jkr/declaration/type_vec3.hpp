@@ -40,7 +40,7 @@ namespace jkr {
 
 		// -- Explicit Basic Constructors --
 		explicit vec(T scalar);
-		constexpr vec(T a, T b, T z);
+		constexpr vec(T a, T b, T c);
 
 		// -- Scalar Constructors
 		template <typename T0, typename T1, typename T2>

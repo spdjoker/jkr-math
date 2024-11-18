@@ -12,17 +12,23 @@
 #ifndef JKR_COMMON_HPP
 #define JKR_COMMON_HPP
 
+#include "jkr/declaration/type_vec1.hpp"
 #include "jkr/declaration/type_vec3.hpp"
 
 // TODO: move to dedicated files later for specific inclusion later
 
 namespace jkr {
 
-	/// @brief test
+	using vec1f = vec<1, float>;
+	using vec1i = vec<1, int>;
+	using vec1d = vec<1, double>;
+	using vec1b = vec<1, bool>;
+
 	using  vec3 = vec<3, float>;
 	using ivec3 = vec<3, int>;
 	using dvec3 = vec<3, double>;
 	using bvec3 = vec<3, bool>;
+
 
 }
 

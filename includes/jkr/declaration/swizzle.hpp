@@ -5,6 +5,9 @@
 #ifndef JKR_SWIZZLE_HPP
 #define JKR_SWIZZLE_HPP
 
+#define JKR_SWIZZLE_COMBINATION_VEC1(a) \
+  vec<1, T> a() const { return vec<1, T>(a); }
+
 #define JKR_SWIZZLE_COMBINATION_VEC2(a,b) \
   vec<2, T> a##b() const { return vec<2, T>(a,b); }
 

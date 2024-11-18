@@ -25,6 +25,8 @@ bool test(bool value, std::string const& expression) {
 int main(int argc, char* argv[]) {
   vec3 v1(9.0f);
   vec3 v2(0);
+  vec1f dummy;
+  dummy.x = 1;
 
   // Test 'res' has been initialized correctly.
   test(v1.x == 9.0f && v1.y == 9.0f && v1.z == 9.0f, "v1 was initialized to proper values.");
