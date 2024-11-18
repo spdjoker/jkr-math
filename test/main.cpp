@@ -3,75 +3,49 @@
 #include "jkr/common.hpp"
 
 #include <iostream>
-#include <string>
+#include <cassert>
 
 using namespace jkr;
 
-template <typename T>
-void print(const std::string& prompt, const vec<3, T>& v, int padding = 20) {
-	std::cout << '<' << v.x << ',' << v.y << ',' << v.z << ">   <--   " << prompt << '\n';
-}
+int fail_counter = 0;
+int total_tests = 0;
 
-void test_addition() {
-	auto key = vec3(9);
-	auto res = vec3();
-
-	std::cout << "== VEC3 Addition == == == == == == == == == ==\n";
-
-	res = vec3(3, 3, 3);
-	res += 6.0f;
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<3,3,3> += 6", res);
-
-	res = vec3(4, 5, 6);
-	res += vec3(5, 4, 3);
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<4,5,6> += <5,4,3>", res);
-
-	res = 2.0f + vec3(7);
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("2 + <7,7,7>", res);
-
-	res = vec3(7) + 2.0f;
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<7,7,7> + 2", res);
-
-	res = vec3(1, 2, 3) + vec3(8, 7, 6);
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<1,2,3> + <8,7,6>", res);
-}
-
-void test_subtraction() {
-	auto key = vec3();
-	auto res = vec3();
-
-	std::cout << "== VEC3 Subtraction == == == == == == == == ==\n";
-
-	res = vec3(3, 3, 3);
-	res -= 3.0f;
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<3,3,3> -= 3", res);
-
-	res = vec3(4, 5, 6);
-	res -= vec3(4, 5, 6);
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<4,5,6> -= <4,5,6>", res);
-
-	res = 2.0f - vec3(2);
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("2 - <2,2,2>", res);
-
-	res = vec3(7) - 7.0f;
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<7,7,7> - 7", res);
-
-	res = vec3(1, 2, 3) - vec3(1, 2, 3);
-	std::cout << ((res == key) ? "[ PASSED ]\t" : "[ FAILED ]\t");
-	print("<1,2,3> - <1,2,3>", res);
+bool test(bool value, std::string const& expression) {
+  if (value) {
+    std::cout << "[ PASSED ]\t";
+  } else {
+    fail_counter++;
+    std::cout << "[ ------ ]\t";
+  }
+  std::cout << expression << '\n';
+  total_tests++;
+  return value;
 }
 
 int main(int argc, char* argv[]) {
-	test_addition();
-	test_subtraction();
-	return 0;
+  vec3 v1(9.0f);
+  vec3 v2(0);
+
+  // Test 'res' has been initialized correctly.
+  test(v1.x == 9.0f && v1.y == 9.0f && v1.z == 9.0f, "v1 was initialized to proper values.");
+  test(v1.x == v1.r && v1.y == v1.g && v1.z == v1.b, "v1's xyz and rgb share memory.");
+  // Test 'key' has been initialized correctly.
+  test(v2.x == 0.0f && v2.y == 0.0f && v2.z == 0.0f, "v2 was initialized to proper values.");
+  test(v2.x == v2.r && v2.y == v2.g && v2.z == v2.b, "v2's xyz and rgb share memory.");
+  // Addition
+  test(v2 + vec3(9.0f, 9.0f, 9.0f) == v1, 	" vec3 + vec3");
+  test(9.0f + v2 == v1, 										"float + vec3");
+  test(9 + v2 == v1, 											  "  int + vec3");
+  test(v2 + 9.0f == v1, 										" vec3 + float");
+  test(v2 + 9 == v1, 											  " vec3 + int");
+  // Subtraction
+  test(v1 - vec3(9.0f, 9.0f, 9.0f) == v2, 	" vec3 - vec3");
+  test(9.0f - v1 == v2, 										"float - vec3");
+  test(9 - v1 == v2, 											  "  int - vec3");
+  test(v1 - 9.0f == v2, 										" vec3 - float");
+  test(v1 - 9 == v2, 											  " vec3 - int");
+
+  std::cout << (total_tests - fail_counter) << '/' << total_tests;
+
+  return fail_counter;
 }

@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(CTest)
 enable_testing()
 
+
 include_directories(${CMAKE_SOURCE_DIR}/includes)
 
 add_subdirectory(test)
