@@ -7,6 +7,12 @@
 #include "jkr/macro.hpp"
 
 namespace jkr {
+  /**
+   * @class vec<1,T>
+   * @brief A specialization of @ref vec with a length of 1.
+   * 
+   * @tparam T The value type of the elements within this vector.
+   */
 
   template <typename T>
   struct vec<1, T>{

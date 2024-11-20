@@ -1,12 +1,17 @@
 var namespacejkr =
 [
     [ "vec", "structjkr_1_1vec.html", null ],
+    [ "vec< 1, T >", "structjkr_1_1vec_3_011_00_01_t_01_4.html", "structjkr_1_1vec_3_011_00_01_t_01_4" ],
     [ "vec< 3, T >", "structjkr_1_1vec_3_013_00_01_t_01_4.html", "structjkr_1_1vec_3_013_00_01_t_01_4" ],
     [ "bvec3", "namespacejkr.html#a3a47ec850b1f60db074b4c75f0a219ec", null ],
     [ "byte", "namespacejkr.html#aa8abc87ee70e21af1afb5bb48270369f", null ],
     [ "dvec3", "namespacejkr.html#ae3d9246152fc85397d532ef9ebeb63ad", null ],
     [ "ivec3", "namespacejkr.html#ad4eaa29f53fc6d885851c79c07777216", null ],
     [ "length_t", "namespacejkr.html#a9f385d2c41310e1322f54ce19675a0e9", null ],
+    [ "vec1b", "namespacejkr.html#ac72a115eb775538773829946a2d7268f", null ],
+    [ "vec1d", "namespacejkr.html#a6f3f49b191f7a9756335115a06d3c930", null ],
+    [ "vec1f", "namespacejkr.html#a9e351574623281539fb7ce850fccf332", null ],
+    [ "vec1i", "namespacejkr.html#acdf0b64dce2a34969483819109a908a9", null ],
     [ "vec3", "namespacejkr.html#a5d9e2bdfb7bf9eeb42b956307c0314fc", null ],
     [ "operator!=", "namespacejkr.html#a854cfd724ef9259b1d74edf19325ccb4", null ],
     [ "operator&&", "namespacejkr.html#a9a8bee626dba89c0ebf0fc91ccb49256", null ],

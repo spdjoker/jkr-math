@@ -1,5 +1,6 @@
 var swizzle_8hpp =
 [
+    [ "JKR_SWIZZLE_COMBINATION_VEC1", "swizzle_8hpp.html#a24d7f2cb4713199d1fd0d792c006af9b", null ],
     [ "JKR_SWIZZLE_COMBINATION_VEC2", "swizzle_8hpp.html#aa2552228400ff3c8bd51c8deaa2bc369", null ],
     [ "JKR_SWIZZLE_COMBINATION_VEC3", "swizzle_8hpp.html#a12b6cfc3f0b62c3490af06a1f56c4de4", null ],
     [ "JKR_SWIZZLE_VEC2_HELPER", "swizzle_8hpp.html#a2d89961f4f2852ca7b0c93bb152b8c63", null ],
