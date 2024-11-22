@@ -10,5 +10,6 @@ enable_testing()
 
 
 include_directories(${CMAKE_SOURCE_DIR}/includes)
+include_directories(${CMAKE_SOURCE_DIR}/test)
 
 add_subdirectory(test)

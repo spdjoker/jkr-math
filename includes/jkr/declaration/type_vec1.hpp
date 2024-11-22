@@ -40,6 +40,39 @@ namespace jkr {
     // Conversion Constructor
     template <typename U> 
     explicit vec(vec<1, U> const& v);
+
+    // Assignment Operators
+    template <typename U> vec<1, T>& operator  = (vec<1, U> const& vec1);
+    template <typename U> vec<1, T>& operator  = (U scalar);
+
+    template <typename U> vec<1, T>& operator += (vec<1, U> const& vec1);
+    template <typename U> vec<1, T>& operator += (U scalar);
+
+    template <typename U> vec<1, T>& operator -= (vec<1, U> const& vec1);
+    template <typename U> vec<1, T>& operator -= (U scalar);
+
+    template <typename U> vec<1, T>& operator *= (vec<1, U> const& vec1);
+    template <typename U> vec<1, T>& operator *= (U scalar);
+
+    template <typename U> vec<1, T>& operator /= (vec<1, U> const& vec1);
+    template <typename U> vec<1, T>& operator /= (U scalar);
+
+    // Arithmetic Operators
+    template <typename U> friend vec<1, T> operator + (vec<1, U> const& lhs, vec<1, U> const& rhs);
+    template <typename U> friend vec<1, T> operator + (vec<1, U> const& lhs, U rhs);
+    template <typename U> friend vec<1, T> operator + (U lhs, vec<1, U> const& rhs);
+
+    template <typename U> friend vec<1, T> operator - (vec<1, U> const& lhs, vec<1, U> const& rhs);
+    template <typename U> friend vec<1, T> operator - (vec<1, U> const& lhs, U rhs);
+    template <typename U> friend vec<1, T> operator - (U lhs, vec<1, U> const& rhs);
+
+    template <typename U> friend vec<1, T> operator * (vec<1, U> const& lhs, vec<1, U> const& rhs);
+    template <typename U> friend vec<1, T> operator * (vec<1, U> const& lhs, U rhs);
+    template <typename U> friend vec<1, T> operator * (U lhs, vec<1, U> const& rhs);
+
+    template <typename U> friend vec<1, T> operator / (vec<1, U> const& lhs, vec<1, U> const& rhs);
+    template <typename U> friend vec<1, T> operator / (vec<1, U> const& lhs, U rhs);
+    template <typename U> friend vec<1, T> operator / (U lhs, vec<1, U> const& rhs);
   };
 
 }

@@ -26,6 +26,79 @@ namespace jkr {
   vec<1, T>::vec(vec<1, U> const& v)
     : x(static_cast<T>(v.x))
   {}
+
+
+  // Assignment Operators
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator  = (vec<1, U> const& v) {
+    this->x = static_cast<T>(v.x);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator  = (U scalar) {
+    this->x  = static_cast<T>(scalar);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator += (vec<1, U> const& v) {
+    this->x += static_cast<T>(v.x);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator += (U scalar) {
+    this->x += static_cast<T>(scalar);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator -= (vec<1, U> const& v) {
+    this->x -= static_cast<T>(v.x);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator -= (U scalar) {
+    this->x -= static_cast<T>(scalar);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator *= (vec<1, U> const& v) {
+    this->x *= static_cast<T>(v.x);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator *= (U scalar) {
+    this->x *= static_cast<T>(scalar);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator /= (vec<1, U> const& v) {
+    this->x /= static_cast<T>(v.x);
+    return *this;
+  }
+
+  template <typename T>
+  template <typename U> 
+  vec<1, T>& vec<1,T>::operator /= (U scalar) {
+    this->x /= static_cast<T>(scalar);
+    return *this;
+  }
 }
 
 #endif // JKR_DECLARATION_TYPE_VEC3_INL

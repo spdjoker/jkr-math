@@ -1,5 +1,5 @@
-#ifndef TEST_HELPER
-#define TEST_HELPER
+#ifndef JKR_TEST_HELPER
+#define JKR_TEST_HELPER
 
 #define ENABLE_SWIZZLE
 
@@ -43,4 +43,27 @@ bool test(bool value, std::string const& label = "NOT LABELED", vector<const cha
   return value;
 }
 
-#endif // TEST_HELPER
+void test_summary() {
+  title(std::to_string(total_tests - fail_counter) + '/' + std::to_string(total_tests));
+}
+
+enum class TEST_ID : int {
+  INVALID = 0,
+  CONSTRUCTOR = 1,
+  OP_ASSIGNMENT = 2,
+  OP_ARITHMETIC = 3,
+  OP_LOGICAL = 4,
+  OP_COMPARISON = 5,
+  OP_INCREMENT = 6,
+  FN_MEMBERS = 7
+};
+
+TEST_ID get_test_id(const char* str) {
+  return (TEST_ID)std::atoi(str);
+}
+
+void add_failed_test() {
+  fail_counter++;
+}
+
+#endif // JKR_TEST_HELPER
