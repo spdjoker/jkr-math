@@ -36,43 +36,48 @@ namespace jkr {
     // Copy Constructor
     vec(vec<1, T> const& v);
     // Scalar Constructor
-    explicit vec(T scalar);
+    constexpr vec(T scalar);
     // Conversion Constructor
-    template <typename U> 
-    explicit vec(vec<1, U> const& v);
+    template <typename U> vec(vec<1, U> const& v);
 
     // Assignment Operators
-    template <typename U> vec<1, T>& operator  = (vec<1, U> const& vec1);
-    template <typename U> vec<1, T>& operator  = (U scalar);
+    template <typename U> constexpr vec<1, T>& operator  = (vec<1, U> const& vec1);
+    template <typename U> constexpr vec<1, T>& operator  = (U scalar);
 
-    template <typename U> vec<1, T>& operator += (vec<1, U> const& vec1);
-    template <typename U> vec<1, T>& operator += (U scalar);
+    template <typename U> constexpr vec<1, T>& operator += (vec<1, U> const& vec1);
+    template <typename U> constexpr vec<1, T>& operator += (U scalar);
 
-    template <typename U> vec<1, T>& operator -= (vec<1, U> const& vec1);
-    template <typename U> vec<1, T>& operator -= (U scalar);
+    template <typename U> constexpr vec<1, T>& operator -= (vec<1, U> const& vec1);
+    template <typename U> constexpr vec<1, T>& operator -= (U scalar);
 
-    template <typename U> vec<1, T>& operator *= (vec<1, U> const& vec1);
-    template <typename U> vec<1, T>& operator *= (U scalar);
+    template <typename U> constexpr vec<1, T>& operator *= (vec<1, U> const& vec1);
+    template <typename U> constexpr vec<1, T>& operator *= (U scalar);
 
-    template <typename U> vec<1, T>& operator /= (vec<1, U> const& vec1);
-    template <typename U> vec<1, T>& operator /= (U scalar);
+    template <typename U> constexpr vec<1, T>& operator /= (vec<1, U> const& vec1);
+    template <typename U> constexpr vec<1, T>& operator /= (U scalar);
 
     // Arithmetic Operators
-    template <typename U> friend vec<1, T> operator + (vec<1, U> const& lhs, vec<1, U> const& rhs);
-    template <typename U> friend vec<1, T> operator + (vec<1, U> const& lhs, U rhs);
-    template <typename U> friend vec<1, T> operator + (U lhs, vec<1, U> const& rhs);
+    template <typename T            > friend constexpr vec<1, T> operator + (vec<1, T> const& lhs, vec<1, T> const& rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator + (vec<1, T> const& lhs,                U rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator + (               U lhs, vec<1, T> const& rhs);
 
-    template <typename U> friend vec<1, T> operator - (vec<1, U> const& lhs, vec<1, U> const& rhs);
-    template <typename U> friend vec<1, T> operator - (vec<1, U> const& lhs, U rhs);
-    template <typename U> friend vec<1, T> operator - (U lhs, vec<1, U> const& rhs);
+    template <typename T            > friend constexpr vec<1, T> operator - (vec<1, T> const& lhs, vec<1, T> const& rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator - (vec<1, T> const& lhs,                U rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator - (               U lhs, vec<1, T> const& rhs);
 
-    template <typename U> friend vec<1, T> operator * (vec<1, U> const& lhs, vec<1, U> const& rhs);
-    template <typename U> friend vec<1, T> operator * (vec<1, U> const& lhs, U rhs);
-    template <typename U> friend vec<1, T> operator * (U lhs, vec<1, U> const& rhs);
+    template <typename T            > friend constexpr vec<1, T> operator * (vec<1, T> const& lhs, vec<1, T> const& rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator * (vec<1, T> const& lhs,                U rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator * (               U lhs, vec<1, T> const& rhs);
 
-    template <typename U> friend vec<1, T> operator / (vec<1, U> const& lhs, vec<1, U> const& rhs);
-    template <typename U> friend vec<1, T> operator / (vec<1, U> const& lhs, U rhs);
-    template <typename U> friend vec<1, T> operator / (U lhs, vec<1, U> const& rhs);
+    template <typename T            > friend constexpr vec<1, T> operator / (vec<1, T> const& lhs, vec<1, T> const& rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator / (vec<1, T> const& lhs,                U rhs);
+    template <typename T, typename U> friend constexpr vec<1, T> operator / (               U lhs, vec<1, T> const& rhs);
+
+    // Logical Operators
+
+    // Conditional Operators
+    template <typename T> friend constexpr bool operator == (vec<1, T> const& lhs, vec<1, T> const& rhs);
+    template <typename T> friend constexpr bool operator != (vec<1, T> const& lhs, vec<1, T> const& rhs);
   };
 
 }

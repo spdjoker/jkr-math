@@ -45,9 +45,22 @@ void test_op_assignment() {
 }
 
 void test_op_arithmetic() {
+  vec1i v(128);
+  int s = 4;
   // TODO: implement, duh
   title("OP Arithmetic Tests");
-  add_failed_test();
+  test((v + v).x == v.x + v.x, "OP +", {"vec<1,T>", "vec<1,T>"});
+  test((v + s).x == v.x + s  , "OP +", {"vec<1,T>",        "T"});
+  test((s + v).x ==   s + v.x, "OP +", {       "T", "vec<1,T>"});
+  test((v - v).x == v.x - v.x, "OP -", {"vec<1,T>", "vec<1,T>"});
+  test((v - s).x == v.x - s  , "OP -", {"vec<1,T>",        "T"});
+  test((s - v).x ==   s - v.x, "OP -", {       "T", "vec<1,T>"});
+  test((v * v).x == v.x * v.x, "OP *", {"vec<1,T>", "vec<1,T>"});
+  test((v * s).x == v.x * s  , "OP *", {"vec<1,T>",        "T"});
+  test((s * v).x ==   s * v.x, "OP *", {       "T", "vec<1,T>"});
+  test((v / v).x == v.x / v.x, "OP /", {"vec<1,T>", "vec<1,T>"});
+  test((v / s).x == v.x / s  , "OP /", {"vec<1,T>",        "T"});
+  test((s / v).x ==   s / v.x, "OP /", {       "T", "vec<1,T>"});
 }
 
 void test_op_logical() {
@@ -57,9 +70,14 @@ void test_op_logical() {
 }
 
 void test_op_comparison() {
-  // TODO: implement, duh
+  vec1i v1(1);
+  vec1i v2(2);
+
   title("OP Comparison Tests");
-  add_failed_test();
+  test((v1 == v1) == true , "OP == TRUE" , {"vec<1,T>","vec<1,T>"});
+  test((v1 == v2) == false, "OP == FALSE", {"vec<1,T>","vec<1,T>"});
+  test((v1 != v2) == true , "OP != TRUE" , {"vec<1,T>","vec<1,T>"});
+  test((v1 != v1) == false, "OP != FALSE", {"vec<1,T>","vec<1,T>"});
 }
 
 int main(int argc, char* argv[]) {
