@@ -24,10 +24,10 @@ namespace jkr {
 	using vec1d = vec<1, double>;
 	using vec1b = vec<1, bool>;
 
-	using  vec3 = vec<3, float>;
-	using ivec3 = vec<3, int>;
-	using dvec3 = vec<3, double>;
-	using bvec3 = vec<3, bool>;
+	using vec3f = vec<3, float>;
+	using vec3i = vec<3, int>;
+	using vec3d = vec<3, double>;
+	using vec3b = vec<3, bool>;
 
 
 }
